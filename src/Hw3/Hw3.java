@@ -82,13 +82,10 @@ public class Hw3 {
 					}								
 				}
 			} while (c);
-			
-			System.out.print(a[i] + " ");
-			}
-		
-			
-		
+				System.out.print(a[i] + " ");
+			}						
 		System.out.println();
 		System.out.print(" 共有:" + sum + "個");
+		//會有錯誤
 	}
 }
