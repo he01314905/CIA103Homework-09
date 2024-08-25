@@ -67,25 +67,27 @@ public class Hw3 {
 		System.out.println();
 		System.out.print("選出的號碼為:");
 		int[] a = new int[6];
-		int[] d = new int[6];
 		boolean c;
 		for (int i = 0; i < 6; i++) {
 			do {
 				c = false;
-				a[i] = (int) (Math.random() * 49) + 1;
-				for (int j = 0; j < i; j++) {
-					if (a[i] == a[j]) {
+				a[i] = (int) (Math.random() * 10) + 1;
+				for (int j = 0; j < i; j++)
+				{
+					if (a[i] == a[j] || a[i] % 10 == data1)
+					{
 						c = true;
-					}else if (a[i] / 10 == data1 || a[i] % 10 == data1) {
-						c=true;
-						break;
-					}								
+					}
 				}
 			} while (c);
-				System.out.print(a[i] + " ");
-			}						
+			if (a[i] / 10 == data1 || a[i] % 10 == data1)
+			{
+				i--;
+				continue;
+			}
+			System.out.print(a[i] + " ");
+		}
 		System.out.println();
 		System.out.print(" 共有:" + sum + "個");
-		//會有錯誤
 	}
 }
