@@ -55,28 +55,32 @@ public class Hw3 {
 //		(提示:Scanner)
 //		(進階挑戰:輸入不要的數字後,直接亂數印出6個號碼且不得重複)
 
-//		int sum = 0;
-//		System.out.println("輸入O-9");
-//		int data1 = sc.nextInt();
-//		for (int i = 1; i <= 49; i++) {
-//			if ((i / 10 != data1 && i % 10 != data1)) {
-//				System.out.print(i + " ");
-//				sum++;
-//			}
-//		}
-//		System.out.println();
-//		int[] a = new int[6];
-//		for (int i = 0; i < 6; i++) {
-//			a[i] = (int) (Math.random() * 49) + 1;
-//			for (int j = 0; j < i; j++) {
-//				if (a[i] / 10 == data1 && a[i] % 10 == data1) {
-//					i--;
-//					continue;
-//				}
-//			}
-//			System.out.print(a[i] + " ");
-//		}
-//		System.out.println();
-//		System.out.print(" 共有:" + sum + "個");
+		int sum = 0;
+		System.out.println("輸入O-9");
+		int data1 = sc.nextInt();
+		for (int i = 1; i <= 49; i++) {
+			if ((i / 10 != data1 && i % 10 != data1)) {
+				System.out.print(i + " ");
+				sum++;
+			}
+		}
+		System.out.println();
+		System.out.print("選出的號碼為:");
+		int[] a = new int[6];
+		int[] c =new int[6];
+		for (int i = 0; i < 6; i++) {
+			a[i] = (int) (Math.random() * 49) + 1;
+			for (int j = 0; j < i; j++) {
+				if (a[i] / 10 == data1 && a[i] % 10 == data1) {
+					i--;
+				continue;
+				}else {
+					c[i]=a[i];
+				}
+			}
+			System.out.print( +c[i] + " ");
+		}
+		System.out.println();
+		System.out.print(" 共有:" + sum + "個");
 	}
 }
