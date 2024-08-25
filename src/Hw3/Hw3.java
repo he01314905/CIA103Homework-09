@@ -78,7 +78,7 @@ public class Hw3 {
 					c[i]=a[i];
 				}
 			}
-			System.out.print( +c[i] + " ");
+			System.out.print(c[i] + " ");
 		}
 		System.out.println();
 		System.out.print(" 共有:" + sum + "個");
