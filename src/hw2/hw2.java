@@ -107,14 +107,14 @@ public class hw2 {
 //			
 //		}
 
-//		for (int i = 1; i <= 9; i++) {
-//			int j = 1;
-//			 do{
-//				System.out.print(i + "*" + j + "=" + i * j + "\t");
-//				j++;
-//			}while (j <= 9);
-//			System.out.println("");
-//		}
+		for (int ni = 1; ni <= 9; ni++) {
+			int nj = 1;
+			 do{
+				System.out.print(ni + "*" + nj + "=" + ni * nj + "\t");
+				nj++;
+			}while (nj <= 9);
+			System.out.println("");
+		}
 //		int i = 1;
 //
 //		while (i <= 9) {

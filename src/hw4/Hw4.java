@@ -83,44 +83,56 @@ public class Hw4 {
 //		(提示1:Scanner,陣列)
 //		(提示2:需將閏年條件加入)
 //		(提示3:擋下錯誤輸入:例如月份輸入為2,則日期不該超過29)
-		Scanner sc1 = new Scanner(System.in);
-		System.out.println("輸入年");
-		int year = sc1.nextInt();
-		System.out.println("輸入月份");
-		int month = sc1.nextInt();
-		System.out.println("輸入天");
-		int day = sc1.nextInt();
-		int feb;
-		int sum = 0;
-		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-			feb = 29;
-			System.out.println("閏年");
-		} else {
-			feb = 28;
-			System.out.println("不是閏年");
-		}
-		int[] date = { 31, feb, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-		for (int i = 0; i <= month - 1; i++) {
-
-			sum += date[i];
-		}
-		if (year <= 0 || month <= 0 || day <= 0 || day > date[month - 1] || month > 12) {
-			System.out.println("輸入錯誤,請重新輸入");
-		} else {
-			System.out.print("輸入的日期為該年第" + sum + "天");
-		}
+//		Scanner sc1 = new Scanner(System.in);
+//		System.out.println("輸入年");
+//		int year = sc1.nextInt();
+//		System.out.println("輸入月份");
+//		int month = sc1.nextInt();
+//		System.out.println("輸入天");
+//		int day = sc1.nextInt();
+//		int feb;
+//		int sum = 0;
+//		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+//			feb = 29;
+//			System.out.println("閏年");
+//		} else {
+//			feb = 28;
+//			System.out.println("不是閏年");
+//		}
+//		int[] date = { 31, feb, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//		for (int i = 0; i <= month - 1; i++) {
+//
+//			sum += date[i];
+//		}
+//		if (year <= 0 || month <= 0 || day <= 0 || day > date[month - 1] || month > 12) {
+//			System.out.println("輸入錯誤,請重新輸入");
+//		} else {
+//			System.out.print("輸入的日期為該年第" + sum + "天");
+//		}
 //		• 班上有8位同學,他們進行了6次考試結果如下:
 //		請算出每位同學考最高分的次數
 //		(提示:二維陣列)
-//		int score[][] = { {1,2,3,4,5,6,7,8}, {1,2,3,4,5,6} };
-//		int score[0]= new int[]{10,37,100,77,98,90};
-//		int score[1]= new int[]{35,75,70,95,70,80};
-//		int score[2]= new int[]{40,77,79,70,89,100};
-//		int score[3]= new int[]{100,89,90,89,90,75};
-//		int score[4]= new int[]{90,64,75,60,75,50};
-//		int score[5]= new int[]{85,75,70,75,90,20};
-//		int score[6]= new int[]{75,70,79,85,89,99};
-//		int score[7]= new int[]{70,95,90,89,90,75};
+		int score[][] = {  
+		{10,37,100,77,98,90},
+		{35,75,70,95,70,80},
+		{40,77,79,70,89,100},
+		{100,89,90,89,90,75},
+		{90,64,75,60,75,50},
+		{85,75,70,75,90,20},
+		{75,70,79,85,89,99},
+		{70,95,90,89,90,75}
+	};
+		int exam=0;
+		for(int i=0;i<score.length;i++) {
+			for(int j=0;j<score[i].length;j++) {
+				if(score[i][j]>exam) {
+					exam=score[i][j];
+					
+				}
+				
+			}
+			
+		}
 		
 	}
 
