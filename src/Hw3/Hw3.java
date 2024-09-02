@@ -16,7 +16,8 @@ public class Hw3 {
 		int tr1=sc.nextInt();
 		int tr2=sc.nextInt();
 		int tr3=sc.nextInt();
-		if(tr1==0 || tr2==0 || tr3==0) {
+
+		if( tr1+tr2<=tr3||tr1+tr3<=tr2||tr2+tr3<=tr1) {
 			System.out.println("不是三角形");
 		}
 		else if(tr1==tr2 && tr2==tr3) {
@@ -35,7 +36,7 @@ public class Hw3 {
 //		(進階功能:產生0~100亂數,每次猜就會提示你是大於還是小於正確答案)
 
 		System.out.println("請輸入0~100:");
-		int r = (int) (Math.random() * 100) ;
+		int r = (int) (Math.random() * 101) ;
 //		System.out.println(r);
 		int guess = sc.nextInt();
 		while (guess != r) {
