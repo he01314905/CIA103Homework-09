@@ -16,6 +16,7 @@ public class Hw3 {
 		int tr1=sc.nextInt();
 		int tr2=sc.nextInt();
 		int tr3=sc.nextInt();
+
 		if( tr1+tr2<=tr3||tr1+tr3<=tr2||tr2+tr3<=tr1) {
 			System.out.println("不是三角形");
 		}
