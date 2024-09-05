@@ -34,7 +34,7 @@ public class Hw4 {
 			b[i] = s.charAt(i);
 			System.out.print(b[i]);
 		}
-
+		System.out.println();
 //		有個字串陣列如下 (八大行星):
 //		{“mercury”, “venus”, “earth”, “mars”, “jupiter”, “saturn”, “uranus”, “neptune”}
 //		請用程式計算出這陣列裡面共有多少個母音(a, e, i, o, u)
@@ -54,7 +54,7 @@ public class Hw4 {
 				}
 			}
 		}
-		System.out.println(count);
+		System.out.print("母音總共有:"+count+"個");
 
 //		• 阿文上班時忘了帶錢包,想要向同事借錢,和他交情比較好的同事共有 5 個,其員工編號與身上現金列
 //		表如下:

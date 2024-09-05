@@ -22,7 +22,6 @@ public class CalTest {
 					throw new InputMismatchException("輸入格式錯誤");
 				}
 				int y = sc.nextInt();
-
 				pow.powerXY(x, y);
 				c = false;
 
