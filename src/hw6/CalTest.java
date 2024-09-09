@@ -8,31 +8,35 @@ public class CalTest {
 		Calculator pow = new Calculator();
 		Scanner sc = new Scanner(System.in);
 		boolean c = true;
-		System.out.println("請輸入x的值:");
-		System.out.println("請輸入y的值:");
-		int x = sc.nextInt();
-		int y = sc.nextInt();
-		if(sc.hasNextInt()) {
-			 x = sc.nextInt();
-		}else {
-			System.out.println("輸入格式錯誤");
-		}
-	
 		while (c) {
+			
 			try {
+				
+				System.out.println("請輸入x的值:");
+				int x = sc.nextInt();
+				System.out.println("請輸入y的值:");
+				int y = sc.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("輸入格式錯誤");
+				break;
+			}  
+			try {
+				System.out.println("請輸入x的值:");
+				int x = sc.nextInt();
+				System.out.println("請輸入y的值:");
+				int y = sc.nextInt();
 				pow.powerXY(x, y);
-				c = false;
-			} catch (CalExecption e) {
+				break;
+			}
+			catch (CalExecption e) {
 				System.out.println(e.getMessage());
 				System.out.println("請輸入x的值:");
-				x = sc.nextInt();
+				int x = sc.nextInt();
 				System.out.println("請輸入y的值:");
-				y = sc.nextInt();
-			} catch (InputMismatchException e) {
-				e.printStackTrace();
-			} finally {
-				sc.close();
-			}
+				int y = sc.nextInt();
+		}finally {
+			sc.close();
 		}
 	}
+}
 }
