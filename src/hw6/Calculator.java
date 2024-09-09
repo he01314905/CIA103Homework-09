@@ -1,8 +1,5 @@
 package hw6;
 
-
-
-
 public class Calculator {
 //	請設計三個類別Calculator.java,CalException.java與CalTest.java,在Calculator.java裡有個自訂
 //	方法為powerXY(int x, int y),功能是會計算x的y次方並回傳結果。 CalTest.java執行後,使用者可
@@ -18,6 +15,6 @@ public class Calculator {
 		}else if(y<0) {
 			throw new CalExecption("次方為負值,回傳不為整數!");		
 		}
-		System.out.println(power);
+		System.out.println(x+"的"+y+"次方為:"+power);
 	}
 }
