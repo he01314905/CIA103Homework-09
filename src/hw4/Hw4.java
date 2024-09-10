@@ -30,7 +30,7 @@ public class Hw4 {
 		String s = "Hello World";
 		int g = s.length();
 		char[] b = new char[g];
-		for (int i = s.length() - 1; 0 <= i; i--) {
+		for (int i = b.length - 1; 0 <= i; i--) {
 			b[i] = s.charAt(i);
 			System.out.print(b[i]);
 		}
