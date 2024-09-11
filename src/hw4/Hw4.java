@@ -50,7 +50,6 @@ public class Hw4 {
 				case 'o':
 				case 'u':
 					count++;
-					break;
 				}
 			}
 		}

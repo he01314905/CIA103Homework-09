@@ -7,10 +7,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 
-public class SampleTXT {
+public class SampleTXT implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private String name;
-	public SampleTXT() throws IOException {
+	public void pr() throws IOException {
+		
 		String b;
 		int a = 0;
 		try {
@@ -33,7 +36,7 @@ public class SampleTXT {
 		}
 		System.out.println();
 	}
-
+	
 	public void random() throws IOException {
 		System.out.println();
 		try {
@@ -67,6 +70,9 @@ public class SampleTXT {
 	}
 	public void speak() throws IOException {
 		
-		
-	}
+	
+	
 }
+	}
+
+
