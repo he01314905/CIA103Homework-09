@@ -54,7 +54,7 @@ public static void main(String[] args) {
 //			obj=li.get(i);
 //			obj.getTrain();
 //		}
-		
+//		
 		}
 		
 }
