@@ -49,7 +49,7 @@ class Spender extends Thread {
 
 	public void run() {
 		for (int i = 1; i <= 10; i++)
-			live.pure(2000); // 每次生產4個
+			live.pure(2000);
 	}
 }
 
@@ -62,7 +62,7 @@ class Purer extends Thread {
 
 	public void run() {
 		for (int i = 1; i <= 10; i++)
-			live.spend(1000); // 每次消費3個
+			live.spend(1000);
 	}
 }
 
