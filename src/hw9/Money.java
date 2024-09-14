@@ -13,16 +13,15 @@ class live {
 				e.printStackTrace();
 			}
 		}
-		deposit -= cash;
-		System.out.println("熊大領了" + cash + ", 帳戶共有 :" + deposit);
 		if (deposit <= 2000) {
 			System.out.println("熊大存款不到2000,請求支援");
-			notify();
 		}
+		deposit -= cash;
+		System.out.println("熊大領了" + cash + ", 帳戶共有 :" + deposit);
+		notify();
 	}
 
 	synchronized public void pure(int cash) {
-
 		while (deposit > 3000) {
 			System.out.println("熊大存款超過3000，不給錢了");
 			System.out.println("熊媽跟熊大說有錢了,拿去花");
@@ -31,13 +30,11 @@ class live {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-
 		}
 		deposit += cash;
 		System.out.println("熊媽存了" + cash + ", 帳戶共有 :" + deposit);
 		notify();
 	}
-
 }
 
 class Spender extends Thread {
@@ -48,8 +45,9 @@ class Spender extends Thread {
 	}
 
 	public void run() {
-		for (int i = 1; i <= 10; i++)
+		for (int i = 1; i <= 10; i++) {
 			live.pure(2000);
+		}
 	}
 }
 
@@ -61,8 +59,9 @@ class Purer extends Thread {
 	}
 
 	public void run() {
-		for (int i = 1; i <= 10; i++)
+		for (int i = 1; i <= 10; i++) {
 			live.spend(1000);
+		}
 	}
 }
 
@@ -73,5 +72,6 @@ public class Money {
 		Purer purer = new Purer(live);
 		spender.start();
 		purer.start();
+
 	}
 }
