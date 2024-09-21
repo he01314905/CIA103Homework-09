@@ -11,7 +11,7 @@ public class Hw8 {
 	public static void main(String[] args) {
 		// Integer(100)、Double(3.14)、Long(21L)、Short(“100”)、Double(5.1)、“Kitty”、Integer(100)、
 //	Object物件、“Snoopy”、BigInteger(“1000”)
-		Collection li = new ArrayList();
+		List li = new ArrayList();
 		li.add(new Integer(100));
 		li.add(new Double(3.14));
 		li.add(new Long(21L));
@@ -19,7 +19,7 @@ public class Hw8 {
 		li.add(new Double(5.1));
 		li.add("Kitty");
 		li.add(100);
-		li.add((Object) "物件");
+		li.add(new Object());
 		li.add("Snoopy");
 		li.add(new BigInteger("1000"));
 
@@ -45,5 +45,13 @@ public class Hw8 {
 			}
 		}
 		System.out.println(li);
+		System.out.println(li.size());
+		for (int i = li.size() - 1; i >= 0; i--) {
+			if (!(li.get(i) instanceof Number)) {
+				li.remove(li.get(i));
+			}
+		}
+		System.out.print(li);
 	}
+
 }
