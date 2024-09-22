@@ -27,7 +27,7 @@ public class Train {
 	}
 
 	public static void main(String[] args) {
-		List<Train> li = new ArrayList<Train>();
+		List<Train> li = new ArrayList<>();
 		li.add(new Train(202, "普悠瑪", "樹林", "花蓮", 400));
 		li.add(new Train(1254, "區間", "屏東", "基隆", 700));
 		li.add(new Train(118, "自強", "高雄", "台北", 500));
@@ -36,26 +36,26 @@ public class Train {
 		li.add(new Train(1222, "區間", "樹林", "七堵", 300));
 		li.add(new Train(1254, "區間", "屏東", "基隆", 700));
 		TreeMap<Integer, Train> map = new TreeMap<Integer, Train>();
-
+		
+	
 		for (Train i : li) {
 			map.put(i.number, i);
 		}
 		for (Train i : map.values()) {
 			i.getTrain();
 		}
-//		
+//		Train obj;
+//		for(int i=0;i<li.size();i++) {
+//			obj=li.get(i);
+//			obj.getTrain();
+//		}
 //		Iterator it= li.iterator();
 //		while(it.hasNext()) {
 //				Train i = (Train) it.next();
 //				
 //				i.getTrain();
 //		}		
-//		Train obj;
-//		for(int i=0;i<li.size();i++) {
-//			obj=li.get(i);
-//			obj.getTrain();
-//		}
-//		
-	}
+
+}
 
 }

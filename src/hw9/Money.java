@@ -30,6 +30,8 @@ class live {
 				wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
+				System.err.println("媽媽可以結束匯款惹～");
+				return;
 			}
 
 		}
@@ -40,7 +42,7 @@ class live {
 
 }
 
-class Spender extends Thread {
+class Spender implements Runnable  {
 	live live;
 
 	public Spender(live live) {
@@ -51,18 +53,22 @@ class Spender extends Thread {
 		for (int i = 1; i <= 10; i++)
 			live.pure(2000);
 	}
+
 }
 
-class Purer extends Thread {
+class Purer implements Runnable  {
 	live live;
-
+	public static boolean isFinished = false ;
 	public Purer(live live) {
 		this.live = live;
 	}
 
 	public void run() {
-		for (int i = 1; i <= 10; i++)
+	
+		for (int i = 1; i <= 10; i++) {
 			live.spend(1000);
+		}
+	isFinished=true;
 	}
 }
 
@@ -71,7 +77,23 @@ public class Money {
 		live live = new live();
 		Spender spender = new Spender(live);
 		Purer purer = new Purer(live);
-		spender.start();
-		purer.start();
+		Thread threadMom = new Thread(spender);
+		Thread threadSon = new Thread(purer);
+		threadMom.start();
+		threadSon.start();
+		while(true) {
+		if(purer.isFinished && threadMom.isAlive()) {
+			threadMom.interrupt();
+		}
+		try {
+			// 讓無窮迴圈睡一下，把執行權讓出來
+			Thread.sleep(500);
+		} catch (InterruptedException ie) {
+			ie.printStackTrace();
+		}
+		if(purer.isFinished && !threadMom.isAlive()) {
+			break;
+		}
+	}
 	}
 }
