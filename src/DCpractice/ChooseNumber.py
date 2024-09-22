@@ -1,4 +1,5 @@
 from random import random
+#五次機會,猜1~100的數字
 
 a=int(random()*100)+1
 c =int(input("請猜數字"))

@@ -3,6 +3,12 @@ package DCpractice;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+//撰寫一個 Java 程式，讓使用者輸入他們的收入和支出，並根據以下條件給出建議：
+//若使用者的收入大於支出兩倍，輸出「財務狀況穩定」。
+//若收入等於或小於支出的兩倍且大於支出，輸出「財務狀況良好」。
+//若收入等於支出，輸出「財務平衡」。
+//若收入小於支出，輸出「財務赤字，請節省開支」。
+//若任何一個輸入不是正數，應輸出錯誤訊息，並要求重新輸入。
 public class salgame {
 	private int income;
 	private int spend;
@@ -35,7 +41,6 @@ public class salgame {
 			System.out.println("財務狀況良好");
 			return;
 		}
-
 		if (income == spend) {
 			System.out.println("財務平衡");
 			return;
@@ -45,11 +50,8 @@ public class salgame {
 	}
 
 	public static void main(String[] args) {
-
 		salgame sg = new salgame();
-
 		while (true) {
-
 			Scanner sc = new Scanner(System.in);
 			try {
 				if (sg.getincome() == 0) {
@@ -71,6 +73,5 @@ public class salgame {
 				System.out.println("只能輸入正數");
 			}
 		}
-
 	}
 }
