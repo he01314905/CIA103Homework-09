@@ -101,10 +101,11 @@ public class Hw4 {
 			System.out.println("不是閏年");
 		}
 		int[] date = { 31, feb, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-		for (int i = 0; i <= month - 1; i++) {
+		for (int i = 0; i < month - 1; i++) {
 
 			sum += date[i];
 		}
+		sum +=day;
 		if (year <= 0 || month <= 0 || day <= 0 || day > date[month - 1] || month > 12) {
 			System.out.println("輸入錯誤,請重新輸入");
 		} else {

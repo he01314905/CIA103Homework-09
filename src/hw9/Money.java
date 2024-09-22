@@ -13,16 +13,15 @@ class live {
 				e.printStackTrace();
 			}
 		}
-		deposit -= cash;
-		System.out.println("熊大領了" + cash + ", 帳戶共有 :" + deposit);
 		if (deposit <= 2000) {
 			System.out.println("熊大存款不到2000,請求支援");
-			notify();
 		}
+		deposit -= cash;
+		System.out.println("熊大領了" + cash + ", 帳戶共有 :" + deposit);
+		notify();
 	}
 
 	synchronized public void pure(int cash) {
-
 		while (deposit > 3000) {
 			System.out.println("熊大存款超過3000，不給錢了");
 			System.out.println("熊媽跟熊大說有錢了,拿去花");
@@ -33,13 +32,11 @@ class live {
 				System.err.println("媽媽可以結束匯款惹～");
 				return;
 			}
-
 		}
 		deposit += cash;
 		System.out.println("熊媽存了" + cash + ", 帳戶共有 :" + deposit);
 		notify();
 	}
-
 }
 
 class Spender implements Runnable  {
@@ -50,10 +47,10 @@ class Spender implements Runnable  {
 	}
 
 	public void run() {
-		for (int i = 1; i <= 10; i++)
+		for (int i = 1; i <= 10; i++) {
 			live.pure(2000);
+		}
 	}
-
 }
 
 class Purer implements Runnable  {
@@ -64,7 +61,6 @@ class Purer implements Runnable  {
 	}
 
 	public void run() {
-	
 		for (int i = 1; i <= 10; i++) {
 			live.spend(1000);
 		}
@@ -77,6 +73,7 @@ public class Money {
 		live live = new live();
 		Spender spender = new Spender(live);
 		Purer purer = new Purer(live);
+
 		Thread threadMom = new Thread(spender);
 		Thread threadSon = new Thread(purer);
 		threadMom.start();
@@ -86,7 +83,7 @@ public class Money {
 			threadMom.interrupt();
 		}
 		try {
-			// 讓無窮迴圈睡一下，把執行權讓出來
+			
 			Thread.sleep(500);
 		} catch (InterruptedException ie) {
 			ie.printStackTrace();
@@ -95,5 +92,7 @@ public class Money {
 			break;
 		}
 	}
+
+
 	}
 }
