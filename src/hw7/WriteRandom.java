@@ -12,8 +12,6 @@ public class WriteRandom {
 		Iterator it = li.iterator();
 		for (int i = 0; i < li.size(); i++) {
 			Object obj = li.get(i);
-			while (it.hasNext()) {
-			}
 			System.out.println(obj);
 		}
 
