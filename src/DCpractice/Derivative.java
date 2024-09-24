@@ -25,10 +25,13 @@ public class Derivative {
 				{
 				System.out.println(a * b + "x^" + c);
 				}
-		} else 
+		} else if(deri[0] == "" && a>2)
 			{
-			System.out.println(a + "x");
+			System.out.println(a + "x^"+ (int)(a-1));
 			}
+		else {
+			System.out.println(a + "x");
+		}
 
 	}
 }
