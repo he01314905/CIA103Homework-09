@@ -1,4 +1,4 @@
-package DCpractice;
+package dc_practice;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package DCpractice;
+package dc_practice;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -9,11 +9,11 @@ import java.util.Scanner;
 //若收入等於支出，輸出「財務平衡」。
 //若收入小於支出，輸出「財務赤字，請節省開支」。
 //若任何一個輸入不是正數，應輸出錯誤訊息，並要求重新輸入。
-public class salgame {
+public class IncomeSpend {
 	private int income;
 	private int spend;
 
-	public salgame() {
+	public IncomeSpend() {
 	};
 
 	public void setincome(int income) {
@@ -50,7 +50,7 @@ public class salgame {
 	}
 
 	public static void main(String[] args) {
-		salgame sg = new salgame();
+		IncomeSpend sg = new IncomeSpend();
 		while (true) {
 			Scanner sc = new Scanner(System.in);
 			try {
