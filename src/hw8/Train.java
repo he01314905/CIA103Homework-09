@@ -3,9 +3,11 @@ package hw8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -39,23 +41,33 @@ public class Train {
 		li.add(new Train(1222, "區間", "樹林", "七堵", 300));
 		li.add(new Train(1254, "區間", "屏東", "基隆", 700));
 		TreeMap<Integer,Train> map = new TreeMap();
-		
+		Map<Integer,Train> map1 = new HashMap();
 	
 		for (Train i : li) {
 			map.put(i.number,i);
+			map1.put(i.number, i);
 		}
-		for (Train i :	map.values()) {
+	//	不重複 沒排序
+		for (Train i :	map1.values()) {
 			i.getTrain();
 		}
 
+		// 不重複 小到大
+//		for (Train i :	map.values()) {
+//			i.getTrain();
+//		}
+
+		
+		//不重複 大到小
 //		 List<Integer> keys = new ArrayList<>(map.keySet());
-//		for(int i = 0;i < keys.size();i++) {
+//		for(int i = keys.size()-1;i>=0;i--) {
 //			Integer key = keys.get(i);
 //			Train obj = map.get(key);
 //			obj.getTrain();
-//			
 //		}
 		
+		
+		//迭代器 不重複 小到大
 //		Set<Integer> set = map.keySet();		
 //		Iterator<Integer> it= set.iterator();
 //		while(it.hasNext()) {
