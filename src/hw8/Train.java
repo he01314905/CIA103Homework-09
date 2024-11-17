@@ -2,8 +2,11 @@ package hw8;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -35,27 +38,32 @@ public class Train {
 		li.add(new Train(122, "自強", "台中", "花蓮", 600));
 		li.add(new Train(1222, "區間", "樹林", "七堵", 300));
 		li.add(new Train(1254, "區間", "屏東", "基隆", 700));
-		TreeMap<Integer, Train> map = new TreeMap<Integer, Train>();
+		TreeMap<Integer,Train> map = new TreeMap();
 		
 	
 		for (Train i : li) {
-			map.put(i.number, i);
+			map.put(i.number,i);
 		}
-		for (Train i : map.values()) {
+		for (Train i :	map.values()) {
 			i.getTrain();
 		}
-//		Train obj;
-//		for(int i=0;i<li.size();i++) {
-//			obj=li.get(i);
-//			obj.getTrain();
-//		}
-//		Iterator it= li.iterator();
-//		while(it.hasNext()) {
-//				Train i = (Train) it.next();
-//				
-//				i.getTrain();
-//		}		
 
+//		 List<Integer> keys = new ArrayList<>(map.keySet());
+//		for(int i = 0;i < keys.size();i++) {
+//			Integer key = keys.get(i);
+//			Train obj = map.get(key);
+//			obj.getTrain();
+//			
+//		}
+		
+//		Set<Integer> set = map.keySet();		
+//		Iterator<Integer> it= set.iterator();
+//		while(it.hasNext()) {
+//				int key =  it.next();		
+//				Train values = map.get(key);		
+//				values.getTrain();
+//		}		
+		System.out.println();
 }
 
 }
